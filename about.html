@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | The Zen Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#161d1b",
+                    "inverse-surface": "#2b3230",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-variant": "#dde4e1",
+                    "on-primary-fixed-variant": "#005048",
+                    "inverse-on-surface": "#ecf2ef",
+                    "secondary-fixed": "#bbece2",
+                    "outline-variant": "#bbcac6",
+                    "primary-fixed-dim": "#4fdbc8",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#00201c",
+                    "tertiary-container": "#f38764",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#71f8e4",
+                    "surface-container": "#e9efec",
+                    "surface-container-high": "#e3eae7",
+                    "background": "#f4fbf8",
+                    "on-surface-variant": "#3c4947",
+                    "on-tertiary-fixed-variant": "#7c2d11",
+                    "surface-container-low": "#eff5f2",
+                    "secondary-fixed-dim": "#a0d0c6",
+                    "primary-container": "#14b8a6",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "on-secondary-container": "#3d6b63",
+                    "surface-tint": "#006b5f",
+                    "tertiary": "#9b4426",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f4fbf8",
+                    "on-secondary-fixed-variant": "#1f4e47",
+                    "on-tertiary-container": "#6c2106",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#b9e9e0",
+                    "inverse-primary": "#4fdbc8",
+                    "outline": "#6c7a77",
+                    "surface-dim": "#d5dbd9",
+                    "on-error-container": "#93000a",
+                    "secondary": "#38665f",
+                    "surface": "#f4fbf8",
+                    "primary": "#006b5f",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#00201c",
+                    "surface-container-highest": "#dde4e1",
+                    "on-primary-container": "#00423b",
+                    "on-background": "#161d1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-no-lines { border: none !important; }
+        
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-10px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f4fbf8]/90 dark:bg-[#161d1b]/90 backdrop-blur-md shadow-[0_12px_32px_rgba(0,107,95,0.06)]">
+<div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-teal-700 dark:text-teal-400 tracking-tight">The Zen Clinic</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8 font-manrope text-sm font-medium tracking-wide">
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-600 transition-all duration-300 hover:scale-[1.02]" href="index.html">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-600 transition-all duration-300 hover:scale-[1.02]" href="services.html">Services</a>
+<a class="text-teal-700 dark:text-teal-300 border-b-2 border-teal-500 pb-1 transition-all duration-300 hover:scale-[1.02]" href="about.html">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-600 transition-all duration-300 hover:scale-[1.02]" href="appointment.html">Appointment</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:block bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-[1.02] active:scale-95">
+                    Call Now
+                </button>
+<!-- Hamburger Menu Button -->
+<button aria-label="Toggle Menu" class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors focus:outline-none" id="menu-toggle">
+<span class="material-symbols-outlined" id="menu-icon">menu</span>
+<span class="material-symbols-outlined hidden" id="close-icon">close</span>
+</button>
+</div>
+</div>
+<!-- Mobile Nav Menu -->
+<div class="md:hidden absolute top-full left-0 w-full bg-surface-container-lowest border-t border-outline-variant/10 shadow-xl" id="mobile-menu">
+<div class="flex flex-col p-6 space-y-4">
+<a class="px-4 py-3 rounded-xl hover:bg-secondary-container/30 text-slate-600 dark:text-slate-400 hover:text-teal-700 transition-colors font-medium" href="index.html">Home</a>
+<a class="px-4 py-3 rounded-xl hover:bg-secondary-container/30 text-slate-600 dark:text-slate-400 hover:text-teal-700 transition-colors font-medium" href="services.html">Services</a>
+<a class="px-4 py-3 rounded-xl bg-secondary-container/50 text-teal-700 dark:text-teal-300 font-bold" href="about.html">About</a>
+<a class="px-4 py-3 rounded-xl hover:bg-secondary-container/30 text-slate-600 dark:text-slate-400 hover:text-teal-700 transition-colors font-medium" href="appointment.html">Appointment</a>
+<div class="pt-4 sm:hidden">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-4 rounded-full font-bold shadow-lg">
+                        Call Now
+                    </button>
+</div>
+</div>
+</div>
+</nav>
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('active');
+            
+            if (isOpen) {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                mobileMenu.classList.add('active');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            }
+        });
+
+        // Close menu on resize if switching to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+    </script>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 py-20 lg:py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1 space-y-8 z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase">
+                        Welcome to Aura Zen Dental
+                    </div>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                        Great dental results in a <span class="text-primary italic">calm place</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        We believe that a beautiful smile starts with a peaceful mind. Our clinic is designed to remove the stress from dental care through a serene environment and gentle techniques.
+                    </p>
+<div class="pt-4 flex gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-[1.05]">
+                            Book Your Visit
+                        </button>
+<button class="px-8 py-4 rounded-full border border-outline-variant/20 bg-surface-container-lowest text-on-surface font-bold hover:bg-surface-container-low transition-all">
+                            Our Philosophy
+                        </button>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="rounded-[2.5rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+<img class="w-full aspect-[4/5] object-cover" data-alt="Modern high-end boutique dental clinic interior with soft seafoam walls, lush indoor plants, and comfortable designer furniture in warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtpOWclOGKCS7DHFQiwbowjftG55p8_MoYtZ6pUKAiNqHTrwvucHCZW7cBAYf1Gu33DN60iDlrZi0SfJpIoUWTZ8aiXdzlYl-e3KGkEQ0bVE2JlagdhE0_hzBSFb4IUAe222p1X9z0UQKr1NFPzHyqEMga_17QMRgYCy6ap1uMHiGBVFuh9y4UsoxkljUvyKcGWlT_cPW07WDnSwMGz25RexxuOtjnRvO5pjtIY1PU0dP6StuxUEKD_fSuH8iPkiOTvEAzqzEI8Qw"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-6 rounded-2xl shadow-xl max-w-xs border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">5000+ Happy Patients</p>
+<p class="text-xs text-on-surface-variant">Experiencing dental serenity daily</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-primary-fixed/20 to-transparent blur-3xl opacity-50"></div>
+</section>
+<!-- Our Way of Working (Bento Style) -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-3xl lg:text-4xl font-bold text-on-surface mb-4">Our Way of Working</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">We've refined our process to ensure your journey is as smooth as your results.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] transition-all duration-300 hover:shadow-lg group">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">self_improvement</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Arrive in Peace</h3>
+<p class="text-on-surface-variant leading-relaxed">Start with a warm herbal tea in our lounge. No sterile smells, just calming essential oils and soft music.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] transition-all duration-300 hover:shadow-lg group">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl">biotech</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Quiet Precision</h3>
+<p class="text-on-surface-variant leading-relaxed">We use the latest silent technology. No scary drills, just efficient and painless care guided by 3D mapping.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] transition-all duration-300 hover:shadow-lg group">
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed-dim flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary-fixed-variant text-3xl">verified</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Lasting Health</h3>
+<p class="text-on-surface-variant leading-relaxed">Walk out with a personalized wellness plan designed to keep your smile glowing long after your visit.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Modern Care Section -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-8">
+<div class="rounded-3xl overflow-hidden shadow-md">
+<img class="w-full h-64 object-cover" data-alt="High-tech dental laser equipment with glowing teal lights in a clean, clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn30KC20EutJgNAi-aiYXf7p5q2cTcrNijHudLUf1pqNDh65aSgsvDccnoMG7OgEwJmC4u4VmDW_JDkTGJu4AJj4z-rDeO8S18FPPIPAL6DsS1mAglyjEROuxP7636Q5RwfLJZSNAGjH2kqabdt5mIqgXr9PvjNMYMqQ7OsuKJTLEYh5e3R9UsCdO-YRWcGUC4OY9PnGqbNcyTQY4N54QZhNQdu6OJIrIe6ggsy8h9i2lXsHuVdvU1N8Z5Fq4QcOJw3eVpubkh7WE"/>
+</div>
+<div class="bg-primary p-8 rounded-3xl text-on-primary">
+<p class="text-3xl font-extrabold mb-2">99%</p>
+<p class="text-sm font-medium opacity-80 uppercase tracking-widest">Pain-Free Procedure Success</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-high p-8 rounded-3xl">
+<span class="material-symbols-outlined text-primary mb-4">view_in_ar</span>
+<h4 class="font-bold text-on-surface">3D Scanning</h4>
+<p class="text-sm text-on-surface-variant mt-2">Zero-radiation digital impressions.</p>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-md">
+<img class="w-full h-80 object-cover" data-alt="Microscopic view of modern dental restoration materials with a clean white and teal aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh5Am9-yNy_k-atjV9MZm0jS-ZYYbEKoZnq4wC2-nBcLPvOBcqNm0ODSVl2GNRHrlpv60DG8lFRPfY-xYHLYOWUGMR5QIaCZaFW7WQvyPcVaS5kW5kaDgMF3gNaL5NANoSPX3HGNpmAl7t8vYpVUbJu80uebptvP8JwwcKbiUB1INc9ZiJA2itQD29m8xE4DKT8S4xIzsDHISqyDxnJ0_rfethWs7sD_OmenOBMscjHXbVssnmX9ez62_c1CKIMHpOFnX89TbEi2Y"/>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<h2 class="text-4xl font-bold tracking-tight">Modern Care</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        Technology shouldn't be intimidating. At Aura Zen, we use state-of-the-art tools to make your treatment faster, safer, and completely comfortable.
+                    </p>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+<div>
+<h5 class="font-bold">Silent Laser Treatment</h5>
+<p class="text-on-surface-variant text-sm">Replace traditional drills for soft tissue work with our silent medical lasers.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+<div>
+<h5 class="font-bold">Digital Smile Design</h5>
+<p class="text-on-surface-variant text-sm">See your final results in 3D before we even begin your transformation.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+<div>
+<h5 class="font-bold">Smart Patient Portal</h5>
+<p class="text-on-surface-variant text-sm">Access your records, book appointments, and chat with your doctor instantly.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Skilled and Kind Doctors -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-bold mb-4">Skilled and Kind Doctors</h2>
+<p class="text-on-surface-variant">Meet the experts who combine clinical excellence with a warm, human touch.</p>
+</div>
+<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-bold tracking-wider hover:bg-outline-variant/20 transition-colors">
+                        VIEW ALL SPECIALISTS
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Doctor 1 -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Portrait of a professional female dentist smiling in a modern bright clinical setting, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOteUjYUvzNd-hcl7WXxGMXy7asVW6WxCUCDYuGvsaQ9r598fnF5amSLoPTu-YTCf0skOjs_zRh32nGhAYkgzYi9U4TO-wtl5UulpzodL9LhOj8FfKR_pwkuZHm0vkFPLV2sl8cCgurieV1sjGtt3BR4NJS10xInl6WL6OuchUH40sxURNqnsl0iBp0_2T5v_R-Jdvo4KHjUbeow2mDPsJuzujeRxtGA-Wh15JvizLA9LW4hRjnayjlwWDl_ewO50O5hGa99MsW18"/>
+<div class="absolute bottom-4 left-4 right-4 p-4 bg-surface-container-lowest/90 backdrop-blur rounded-2xl">
+<p class="text-primary font-bold text-xs uppercase tracking-widest">Medical Director</p>
+<h4 class="text-xl font-bold">Dr. Elena Vance</h4>
+</div>
+</div>
+<div class="p-8">
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed italic">"My goal is to make every patient feel like they are visiting a friend's home rather than a clinic."</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">ORTHODONTICS</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">15 YRS EXP</span>
+</div>
+</div>
+</div>
+<!-- Doctor 2 -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Portrait of a kind male dentist in his 40s wearing professional teal scrubs in a sunny office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnWqH449zD0RUDGWCsEYQXtA4dFul3OvokUsAAQYzE7Om_BqJ1lyIYiZnln4HDBvBulsJUqsHF4kSjaYll27yHjFgLwYl_p2zQqJE2NVpKMNNUPtAqRuvZePlsCP87mIKif1v-bvIYHbCQuBC8ABSiuXbBCPH7cyIjbAc1XJOIRKbMTsQuvTGIWldRUWjsAjD6OY1Jy0w1s1cF79OM0h8E6LfATd7qs-yHIqbBP1Me9Ti6louIRchr4FZEPJ6LmlwWtSruGo9nEPU"/>
+<div class="absolute bottom-4 left-4 right-4 p-4 bg-surface-container-lowest/90 backdrop-blur rounded-2xl">
+<p class="text-primary font-bold text-xs uppercase tracking-widest">Cosmetic Specialist</p>
+<h4 class="text-xl font-bold">Dr. Julian Thorne</h4>
+</div>
+</div>
+<div class="p-8">
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed italic">"Beauty is in the details. We use science to perfect the art of the natural smile."</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">AESTHETICS</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">IMPLANTS</span>
+</div>
+</div>
+</div>
+<!-- Doctor 3 -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Portrait of a friendly female dental hygienist in a clean white dental clinic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD58SHBEBhQq5q_P3ShSqprJoR_t3EP43XFg5Do9MQaMe81ca8y-Ga6HCLvLN_obuuAcPOxxqlg3QvLP8GO7-pfY6apyBRBVIelmsB0qvuXlj3LuO4PdCCCEjQQNC9beN--6yj6IJRzA0OC-kONT3mkauJumojeTw44xtRsbYG9z8DitP8gzSuxwF_9rhgWyF9SjCs14RgnEPJfKfQAfVFWaGtib-IqbfWQjZMnn87ajA8OEEZumZejZGJLwvgnsPftwKX5vpSNuMI"/>
+<div class="absolute bottom-4 left-4 right-4 p-4 bg-surface-container-lowest/90 backdrop-blur rounded-2xl">
+<p class="text-primary font-bold text-xs uppercase tracking-widest">Hygienist</p>
+<h4 class="text-xl font-bold">Sarah Chen</h4>
+</div>
+</div>
+<div class="p-8">
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed italic">"Preventative care is the highest form of self-love. I make sure your foundation is solid."</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">PREVENTION</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">PERIODONTICS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="bg-primary rounded-[3rem] p-12 lg:p-24 relative overflow-hidden text-center text-on-primary">
+<div class="relative z-10 max-w-3xl mx-auto space-y-8">
+<h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight">Ready to experience the sanctuary for yourself?</h2>
+<p class="text-xl opacity-90 leading-relaxed font-light">Join thousands of patients who have transformed their dental anxiety into dental serenity.</p>
+<div class="pt-6">
+<button class="bg-surface-container-lowest text-primary px-12 py-5 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl shadow-black/10">
+                                Schedule Your Appointment
+                            </button>
+</div>
+</div>
+<!-- Abstract Shape Backgrounds -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary-container rounded-full mix-blend-soft-light filter blur-3xl opacity-30"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#eff5f2] dark:bg-[#0a0f0e] w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-6 font-manrope">
+<div class="text-lg font-semibold text-teal-800 dark:text-teal-200">The Zen Clinic</div>
+<div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-[0.05em]">
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-700 underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-700 underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-700 underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="#">Contact Us</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-700 underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="#">Patient Portal</a>
+</div>
+<div class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-[0.05em]">
+                © 2024 The Zen Clinic. Medical Serenity Guaranteed.
+            </div>
+</div>
+</footer>
+</body></html>
